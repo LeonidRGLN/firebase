@@ -1,0 +1,25 @@
+<div class="wrapper">
+    <div class="container" *ngIf="!isSignedIn">
+      <h2>Регистрация</h2>
+      <label for="em_up">Email</label>
+      <input type ="text" id="em_up" #emailSignup>
+      <label for="pas_up">Пароль</label>
+      <input type ="password" id="pas_up" #passwordSignup>
+      <button (click)="onSignup(emailSignup.value, passwordSignup.value)">Sign up</button>
+  </div>
+    <div class="container" *ngIf="isSignedIn">
+      <h2>Вход</h2>
+      <label for="em_in">Email</label>
+      <input type="text" id="em_in" #email>
+      <label for="pas_in">Пароль</label>
+      <input type="password" id="pas_in" #password>
+      <button (click)="onSignin(email.value, password.value)">Sign in</button>
+
+      <app-home class="back" *ngIf="isSignedIn" (isLogout)="handleLogout()" ></app-home>
+  </div>
+
+
+
+</div>
+
+
