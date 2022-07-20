@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FirebaseService} from "./services/firebase.service";
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import {pushTokenService} from "./services/pushToken.service";
 
 @Component({
   selector: 'app-root',

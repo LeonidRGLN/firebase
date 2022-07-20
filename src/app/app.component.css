@@ -41,3 +41,11 @@ tt{
 .back{
   margin-left: 155px;
 }
+a{
+  margin: 50px 150px;
+  width: 150px;
+  height: 100px;
+  border-radius: 4px;
+  color: red;
+  text-decoration: none;
+}

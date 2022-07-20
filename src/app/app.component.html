@@ -1,4 +1,10 @@
 <div class="wrapper">
+
+  <a routerLink="TableComponent" >Table</a>
+  <a routerLink="ChartComponent" >Chart</a>
+
+
+
     <div class="container" *ngIf="!isSignedIn">
       <h2>Регистрация</h2>
       <label for="em_up">Email</label>
@@ -17,7 +23,6 @@
 
       <app-home class="back" *ngIf="isSignedIn" (isLogout)="handleLogout()" ></app-home>
   </div>
-
 
 
 </div>
