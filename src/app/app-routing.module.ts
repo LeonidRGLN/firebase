@@ -19,12 +19,12 @@ const routes: Routes = [
     path: 'ChartComponent',
     component: ChartComponent,
     canActivate: [AuthGuards],
-    // data: { accessToken: "2720-4044-4713-0021"}
+    data: { accessToken: "2720-4044-4713-0021"}
   },{
     path: 'TableComponent',
     component: TableComponent,
-    canActivate: [ AuthGuards]
-    // data: { accessToken: "5525-5681-6140-8266"}
+    canActivate: [ AuthGuards],
+    data: { accessToken: "5525-5681-6140-8266"}
   },
   {path: '**', component: NotFoundComponentComponent}
 ]

@@ -9,7 +9,7 @@ import {FirebaseService} from "./services/firebase.service";
   providedIn: 'root'
 })
 export class AuthGuards implements CanActivate{
-  constructor(private firebaseService:FirebaseService ) {
+  constructor(private PushTokenService:pushTokenService ) {
   }
   // private pushTokenService : pushTokenService,
   canActivate(
@@ -18,19 +18,19 @@ export class AuthGuards implements CanActivate{
   ): Observable <boolean| UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree| any {
 
 
-    if (this.firebaseService.isLoggedIn) {
-      return true
-    } else {
-      alert('нет доступа к странице '+ route.url)
-    }
-
-    // this.pushTokenService.getAccess().pipe(map(({data}) => {
-    //   if (data.includes(route.data['accessToken'])){
-    //     return true
-    //   } else {
-    //     alert('нет доступа к странице ${route.url')
-    //   }
+    // if (this.firebaseService.isLoggedIn) {
+    //   return true
+    // } else {
+    //   alert('нет доступа к странице '+ route.url)
     // }
-    // ))
+
+
+    this.PushTokenService.getAccess().pipe(map(({data}) => {
+      if (data.includes(route.data['accessToken'])){
+         return true
+      } else {
+         alert('нет доступа к странице ${route.url')
+      }
+     }))
   }
 }
